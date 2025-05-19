@@ -8,6 +8,9 @@ public class AttackBuffBehavior : ItemBehaviorBase
 
     public override void Use(ItemUseContext itemUseContext)
     {
-        //player.BuffAttack(_attackBuffMultiplier, _duration);
+        Player player = itemUseContext.Player;
+
+        player.GetComponent<PlayerStats>()
+              .BuffFireAttack(_attackBuffMultiplier, _duration);
     }
 }

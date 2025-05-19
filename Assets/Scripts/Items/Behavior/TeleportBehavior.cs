@@ -7,6 +7,8 @@ public class TeleportBehavior : ItemBehaviorBase
 
     public override void Use(ItemUseContext itemUseContext)
     {
-        //
+        Transform playerTransform = itemUseContext.Player.transform;
+
+        playerTransform.position = _teleportPosition.position;
     }
 }
