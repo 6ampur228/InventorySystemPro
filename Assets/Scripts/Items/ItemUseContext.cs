@@ -2,19 +2,44 @@ using UnityEngine;
 
 public class ItemUseContext
 {
-    private Player _player;
-    private IDamageable _playerTarget;
+    public Player Player { get; private set; }
+    public IDamageable PlayerTarget { get; private set; }
+    public object CustomData { get; private set; }
 
-    private object _customData;
+    private ItemUseContext() { }
 
-    public Player Player => _player;
-    public IDamageable PlayerTarget => _playerTarget;
-    public object CustomData => _customData;
-
-    public ItemUseContext(Player player, IDamageable playerTarget = null, object customData = null)
+    public class Builder
     {
-        _player = player;
-        _playerTarget = playerTarget;
-        _customData = customData;
+        private Player _player;
+        private IDamageable _target;
+        private object _customData;
+
+        public Builder SetPlayer(Player player)
+        {
+            _player = player;
+            return this;
+        }
+
+        public Builder SetTarget(IDamageable target)
+        {
+            _target = target;
+            return this;
+        }
+
+        public Builder SetCustomData(object data)
+        {
+            _customData = data;
+            return this;
+        }
+
+        public ItemUseContext Build()
+        {
+            return new ItemUseContext
+            {
+                Player = _player,
+                PlayerTarget = _target,
+                CustomData = _customData
+            };
+        }
     }
 }

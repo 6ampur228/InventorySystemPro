@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -7,9 +7,15 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int _mana = 50;
     [SerializeField] private int _fireDamageBaseValue = 5;
 
-    private ModifiableStat _fireAttackDamage;
+    public Dictionary<ModifiableStatType, ModifiableStat> ModifiableStats { get; private set; }
 
-    public int FireAttackDamage => _fireAttackDamage.Value;
+    private void Awake()
+    {
+        ModifiableStats = new Dictionary<ModifiableStatType, ModifiableStat>
+        {
+            { ModifiableStatType.FireAttackDamage, new ModifiableStat(_fireDamageBaseValue) }
+        };
+    }
 
     public void ModifyStatValue(StatType statType, int value)
     {
@@ -23,22 +29,6 @@ public class PlayerStats : MonoBehaviour
                 _mana += value;
                 break;
         }
-    }
-    public void BuffFireAttack(float multiplier, float duration)
-    {
-        StartCoroutine(ApplyTemporaryFireBuff(multiplier, duration));
-    }
-
-    private IEnumerator ApplyTemporaryFireBuff(float multiplier, float duration)
-    {
-        _fireAttackDamage.ApplyMultiplier(multiplier);
-        yield return new WaitForSeconds(duration);
-        _fireAttackDamage.ResetMultiplier();
-    }
-
-    public void InitModifiableStats()
-    {
-        _fireAttackDamage = new ModifiableStat(_fireDamageBaseValue);
     }
 
     private void TryDie()
