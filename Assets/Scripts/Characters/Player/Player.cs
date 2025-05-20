@@ -21,7 +21,6 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        //_playerStats.InitModifiableStats();
         _buffManager.Init(_playerStats);
     }
 

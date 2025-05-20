@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TeleportBehavior", menuName = "Items/Behaviors/Teleport")]
 public class TeleportBehavior : ItemBehaviorBase
 {
-    [SerializeField] private Transform _teleportPosition;
+    [SerializeField] private Transform _teleportPosition; //Improve
 
     public override void Use(ItemUseContext itemUseContext)
     {
