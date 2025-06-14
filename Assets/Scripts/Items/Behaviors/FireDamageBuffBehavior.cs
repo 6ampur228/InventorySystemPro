@@ -8,9 +8,7 @@ public class FireDamageBuffBehavior : ItemBehaviorBase
 
     public override void Use(ItemUseContext itemUseContext)
     {
-        Player player = itemUseContext.Player;
-
-        player.GetComponent<BuffManager>()
-              .ApplyTemporaryBuff(ModifiableStatType.FireAttackDamage, _buffMultiplier, _duration);
+        //Из itemUseContext брать нужный объект и реализовывть логику
+        Debug.Log("+buff");
     }
 }

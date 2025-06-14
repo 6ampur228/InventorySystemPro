@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemUseContext
 {
+    /*
     public Player Player { get; private set; }
     public IDamageable PlayerTarget { get; private set; }
     public object CustomData { get; private set; }
@@ -42,4 +43,5 @@ public class ItemUseContext
             };
         }
     }
+    */
 }

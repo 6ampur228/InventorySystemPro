@@ -7,12 +7,7 @@ public class RestoreManaBehavior : ItemBehaviorBase
 
     public override void Use(ItemUseContext itemUseContext)
     {
-        int manaValue = Mathf.Max(0, _restoreManaAmount);
-
-        if (_restoreManaAmount < 0)
-            Debug.LogWarning($"[RestoreManaBehavior] Restore mana amount is less than zero: {_restoreManaAmount}");
-
-        Player player = itemUseContext.Player;
-        player.ModifyStatValue(StatType.Mana, manaValue);
+        //Из itemUseContext брать нужный объект и реализовывть логику
+        Debug.Log("+mana");
     }
 }

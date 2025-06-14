@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ManaPoison
   m_EditorClassIdentifier: 
   _name: 
-  _icon: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: f763085bf8661684c88d79eb6b587368, type: 3}
   _behavior: {fileID: 11400000, guid: 0347da6bc584cef46afccd93e2ecf91c, type: 2}

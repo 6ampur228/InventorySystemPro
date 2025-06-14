@@ -7,12 +7,7 @@ public class HealBehavior : ItemBehaviorBase
 
     public override void Use(ItemUseContext itemUseContext)
     {
-        int healValue = Mathf.Max(0, _healAmount);
-
-        if (_healAmount < 0)
-            Debug.LogWarning($"[HealBehavior] Heal amount is less than zero: {_healAmount}");
-
-        Player player = itemUseContext.Player;
-        player.ModifyStatValue(StatType.Health, healValue);
+        //Из itemUseContext брать нужный объект и реализовывть логику
+        Debug.Log("+hp");
     }
 }
