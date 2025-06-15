@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Items/Item")]
@@ -15,9 +14,8 @@ public class Item : ScriptableObject
         return Instantiate(this);
     }
 
-    public void Use(ItemUseContext itemUseContext)
+    public void Use()
     {
-        _behavior.Use(itemUseContext);
+        _behavior.Use();
     }
-
 }
