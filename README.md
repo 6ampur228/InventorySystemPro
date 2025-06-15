@@ -1,6 +1,10 @@
-# Inventory System (Unity, UI Toolkit, MVC)
+# Inventory System Pro (Unity, UI Toolkit, MVC)
 
-Модульная, асинхронная, масштабируемая система инвентаря с использованием современных подходов и инструментов Unity. Подходит для проектов с акцентом на чистую архитектуру и расширяемость. Цель проекта показать мои знания на практике с такими вещами как: MVC, UIToolkit, New Input System, async/await, SO, паттерны(Builder, Strategy)
+Система инвентаря с использованием современных подходов и инструментов Unity. Подходит для проектов с акцентом на чистую архитектуру и расширяемость.
+
+Цель проекта показать мои знания на практике с такими вещами как: MVC, UIToolkit, New Input System, async/await, SO, паттерны(Builder, Strategy)
+
+![Inventory Preview](Inventory.gif)
 
 ---
 
